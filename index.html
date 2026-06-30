@@ -973,8 +973,16 @@
     <script type="module">
       import { initScooter3D } from '/src/scooter3d.js'
       const scooterCanvas = document.getElementById('scooter-canvas')
+      let scooterInstance = null
       if (scooterCanvas) {
-        initScooter3D(scooterCanvas)
+        scooterInstance = initScooter3D(scooterCanvas)
+      }
+      if (import.meta.hot) {
+        import.meta.hot.dispose(() => {
+          if (scooterInstance) {
+            scooterInstance.dispose()
+          }
+        })
       }
     </script>
   </body>

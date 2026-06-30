@@ -44,6 +44,19 @@ requestAnimationFrame(() => {
   requestAnimationFrame(mountDevice3D)
 })
 
+if (import.meta.hot) {
+  import.meta.hot.dispose(() => {
+    if (device3D) {
+      device3D.dispose()
+      device3D = null
+    }
+    if (ecosystemDevice3D) {
+      ecosystemDevice3D.dispose()
+      ecosystemDevice3D = null
+    }
+  })
+}
+
 // ── Navbar scroll effect ──────────────────────────────────────────────────────
 const navbar = document.getElementById('navbar')
 window.addEventListener('scroll', () => {

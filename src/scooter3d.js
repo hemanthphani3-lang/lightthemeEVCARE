@@ -28,7 +28,7 @@ export function initScooter3D(canvasEl) {
 
   const loader = new GLTFLoader()
   const dracoLoader = new DRACOLoader()
-  dracoLoader.setDecoderPath('/draco/')
+  dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/')
   loader.setDRACOLoader(dracoLoader)
 
   let scooterGroup = new THREE.Group()
@@ -155,4 +155,20 @@ export function initScooter3D(canvasEl) {
   onResize()
 
   animate()
+
+  function dispose() {
+    alive = false
+    if (rafId) cancelAnimationFrame(rafId)
+    window.removeEventListener('resize', onResize)
+    scene.traverse(obj => {
+      if (!obj.isMesh) return
+      obj.geometry?.dispose()
+      const ms = Array.isArray(obj.material) ? obj.material : [obj.material]
+      ms.forEach(m => { m?.map?.dispose(); m?.envMap?.dispose(); m?.dispose() })
+    })
+    renderer.dispose()
+    dracoLoader.dispose()
+  }
+
+  return { dispose }
 }
