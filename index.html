@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EvCare.AI — AI-Powered EV Intelligence</title>
+    <meta name="description" content="Advanced diagnostics and real-time battery insights for electric vehicles. Smarter decisions for the future of electric mobility." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav id="navbar" class="navbar">
+      <div class="nav-inner container">
+        <a href="#" class="logo" id="logo">
+          <img src="/favicon.png" alt="EvCare.AI" class="nav-logo-img" />
+          <span class="logo-text">EVCARE<span class="logo-dot">.</span>AI</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#features">AI Diagnostics</a></li>
+          <li><a href="#solution">Device App</a></li>
+          <li><a href="#ecosystem">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#cta" class="btn btn-primary btn-sm nav-cta">Get Started →</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <ul>
+          <li><a href="#features">AI Diagnostics</a></li>
+          <li><a href="#solution">Device App</a></li>
+          <li><a href="#ecosystem">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#cta" class="btn btn-primary btn-sm">Get Started →</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+
+      <div class="hero-split container">
+        <!-- LEFT: Text -->
+        <div class="hero-text-col">
+          <div class="hero-badge reveal-up">
+            <span class="mono">AI-POWERED EV INTELLIGENCE</span>
+          </div>
+          <h1 class="display-xl reveal-up" style="--delay:0.1s">
+            AI-POWERED EV<br />
+            <span class="text-green">INTELLIGENCE</span>
+          </h1>
+          <p class="hero-sub reveal-up" style="--delay:0.2s">
+            Advanced diagnostics and real-time battery insights for electric vehicles.
+            Smarter decisions for the future of electric mobility.
+          </p>
+          <div class="hero-actions reveal-up" style="--delay:0.3s">
+            <a href="#features" class="btn btn-primary btn-lg" id="explore-btn">
+              EXPLORE MORE →
+            </a>
+            <a href="#contact" class="btn btn-outline btn-lg">
+              GET IN TOUCH
+            </a>
+          </div>
+          <div class="hero-stats reveal-up" style="--delay:0.45s">
+            <div class="hstat">
+              <span class="hstat-val mono">99.9%</span>
+              <span class="hstat-label mono">UPTIME</span>
+            </div>
+            <div class="hstat-divider"></div>
+            <div class="hstat">
+              <span class="hstat-val mono">&lt;100ms</span>
+              <span class="hstat-label mono">LATENCY</span>
+            </div>
+            <div class="hstat-divider"></div>
+            <div class="hstat">
+              <span class="hstat-val mono">10M+</span>
+              <span class="hstat-label mono">DATA PTS/DAY</span>
+            </div>
+          </div>
+          <div class="hero-scroll-hint reveal-up" style="--delay:0.55s">
+            <span class="mono">SCROLL TO EXPLORE</span>
+            <span class="scroll-arrow">↓</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: 3D Canvas -->
+        <div class="hero-3d-col reveal-right" style="--delay:0.2s">
+          <div class="hero-canvas-wrap">
+            <canvas id="hero-canvas"></canvas>
+            <!-- Floating data badge -->
+            <div class="hero-data-badge hero-badge-tl">
+              <span class="status-chip">● ONLINE</span>
+              <span class="mono" style="font-size:9px;color:var(--text-slate)">BATTERY STATUS</span>
+              <span class="mono" style="font-size:22px;font-weight:800;color:var(--dark-slate);letter-spacing:-0.02em">94<span style="font-size:14px">%</span></span>
+            </div>
+            <div class="hero-data-badge hero-badge-br">
+              <span class="mono" style="font-size:9px;color:var(--text-slate)">CELL HEALTH</span>
+              <span class="mono" style="font-size:18px;font-weight:700;color:var(--primary-mid)">OPTIMAL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES / THE INTELLIGENCE UNIT -->
+    <section id="features" class="section features-section">
+      <div class="container">
+        <div class="section-label reveal-up"><span class="mono">THE INTELLIGENCE UNIT</span></div>
+        <h2 class="headline-lg reveal-up">BUILT FOR REAL-TIME<br />EV INTELLIGENCE</h2>
+        <p class="section-sub reveal-up">A compact, powerful telemetry device that monitors all channels of electric, and transmits critical vehicle data — in real-time.</p>
+
+        <div class="features-grid">
+          <div class="feature-device-card reveal-left">
+            <div class="device-img-wrap">
+              <img src="/device.png" alt="InnoVibe Device" class="feature-device-img" />
+              <div class="device-badge mono">ENGINEERED FOR RELIABILITY</div>
+            </div>
+          </div>
+          <div class="feature-specs">
+            <div class="spec-grid">
+              <div class="spec-card reveal-up" style="--delay:0.0s">
+                <div class="spec-icon">📡</div>
+                <h3 class="mono">GPS TRACKING</h3>
+                <p>Real-time location monitoring and geofencing alerts for your EV fleet.</p>
+              </div>
+              <div class="spec-card reveal-up" style="--delay:0.1s">
+                <div class="spec-icon">⚡</div>
+                <h3 class="mono">OVER AI</h3>
+                <p>Intelligent over-the-air updates that self-optimize firmware and diagnostics.</p>
+              </div>
+              <div class="spec-card reveal-up" style="--delay:0.2s">
+                <div class="spec-icon">🔗</div>
+                <h3 class="mono">MULTI PROTOCOL</h3>
+                <p>Compatible with CAN, OBD-II, and proprietary EV protocols simultaneously.</p>
+              </div>
+              <div class="spec-card reveal-up" style="--delay:0.3s">
+                <div class="spec-icon">🌐</div>
+                <h3 class="mono">CLOUD CONNECTED DATA</h3>
+                <p>Always-on telemetry streaming to secure cloud infrastructure.</p>
+              </div>
+              <div class="spec-card reveal-up" style="--delay:0.4s">
+                <div class="spec-icon">💾</div>
+                <h3 class="mono">LOCAL STORAGE</h3>
+                <p>On-device logging for offline operation and burst data collection.</p>
+              </div>
+              <div class="spec-card reveal-up" style="--delay:0.5s">
+                <div class="spec-icon">🔒</div>
+                <h3 class="mono">SCALABLE RATES</h3>
+                <p>Adaptive sampling rates from 1Hz to 1kHz based on driving conditions.</p>
+              </div>
+            </div>
+            <div class="spec-badges reveal-up" style="--delay:0.6s">
+              <span class="badge mono">POWER SCANNING</span>
+              <span class="badge mono">CONSUMER GRADE</span>
+              <span class="badge mono">HARDWARE DESIGN</span>
+              <span class="badge mono">MULTI-VOLTAGE RANGE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE SOLUTION -->
+    <section id="solution" class="section solution-section">
+      <div class="container">
+        <div class="section-label reveal-up"><span class="mono">THE SOLUTION</span></div>
+        <h2 class="headline-lg reveal-up">INTELLIGENCE THAT<br />WORKS FOR YOU</h2>
+
+        <div class="solution-cards">
+          <div class="solution-card reveal-up" style="--delay:0.0s">
+            <div class="sol-icon">
+              <div class="battery-3d">
+                <div class="battery-cap"></div>
+                <div class="battery-body">
+                  <div class="battery-level"></div>
+                </div>
+              </div>
+            </div>
+            <h3 class="mono">PREDICTIVE INTELLIGENCE</h3>
+            <p>AI algorithms analyze historical patterns to forecast battery degradation before it impacts your range.</p>
+          </div>
+          <div class="solution-card reveal-up" style="--delay:0.1s">
+            <div class="sol-icon">
+              <div class="animated-storm">
+                <svg viewBox="0 0 100 100" width="36" height="36">
+                  <defs>
+                    <filter id="real-glow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <path class="lightning-bolt" d="M60,5 L25,50 L50,50 L40,95 L80,40 L55,40 Z" fill="#ffeb3b" filter="url(#real-glow)" />
+                  <path class="lightning-spark" d="M70,25 L85,40 L75,40 L85,60" stroke="#ffffff" stroke-width="3" fill="none" filter="url(#real-glow)" />
+                </svg>
+              </div>
+            </div>
+            <h3 class="mono">REAL-TIME PROTECTION</h3>
+            <p>Continuous monitoring with immediate anomaly detection across all battery cells and power systems.</p>
+          </div>
+          <div class="solution-card reveal-up" style="--delay:0.2s; padding-top: 80px;">
+            <div style="position: absolute; top: 10px; left: 0; width: 100%; height: 80px;">
+              <canvas id="scooter-canvas" style="width: 100%; height: 100%; pointer-events: none;"></canvas>
+            </div>
+            <h3 class="mono">SMART FLEET VISIBILITY</h3>
+            <p>Complete visibility across your entire fleet from one dashboard, anywhere in the world.</p>
+          </div>
+          <div class="solution-card reveal-up" style="--delay:0.3s">
+            <div class="sol-icon">
+              <div class="bell-3d">
+                <div class="bell-top"></div>
+                <div class="bell-body"></div>
+                <div class="bell-flare"></div>
+                <div class="bell-clapper"></div>
+              </div>
+            </div>
+            <h3 class="mono">PREDICTIVE ALERTS</h3>
+            <p>Smart notifications that send alerts directly to your phone before issues become costly problems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ECOSYSTEM -->
+    <section id="ecosystem" class="section ecosystem-section">
+      <div class="container">
+        <div class="section-label reveal-up"><span class="mono">THE ECOSYSTEM</span></div>
+        <h2 class="headline-lg reveal-up">ONE CONNECTED EV<br />INTELLIGENCE ECOSYSTEM.</h2>
+        <p class="section-sub reveal-up">Hardware. AI cloud and app — working together in real-time to keep your vehicle, and your fleet always connected.</p>
+
+        <div class="ecosystem-grid" style="position: relative;">
+          <svg id="eco-static-lines" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1; overflow:visible;"></svg>
+          <div class="eco-feature-list eco-left">
+              <div class="eco-feature">
+                <div class="eco-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0 M1.42 9a16 16 0 0 1 21.16 0 M8.53 16.11a6 6 0 0 1 6.95 0 M12 20h.01"/></svg></div>
+                <div class="eco-text">
+                  <span class="eco-feat-label">REAL-TIME DATA</span>
+                  <span class="eco-feat-desc">Live telemetry streamed from device to cloud in under 100ms latency.</span>
+                </div>
+                <div class="eco-connection-dot"></div>
+              </div>
+              <div class="eco-feature">
+                <div class="eco-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/><line x1="12" y1="6" x2="12" y2="6"/></svg></div>
+                <div class="eco-text">
+                  <span class="eco-feat-label">AI BATTERY HEALTH</span>
+                  <span class="eco-feat-desc">Machine learning models trained on millions of charge cycles.</span>
+                </div>
+                <div class="eco-connection-dot"></div>
+              </div>
+              <div class="eco-feature">
+                <div class="eco-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+                <div class="eco-text">
+                  <span class="eco-feat-label">SMART ALERTS</span>
+                  <span class="eco-feat-desc">Context-aware notifications that learn your patterns over time.</span>
+                </div>
+                <div class="eco-connection-dot"></div>
+              </div>
+              <div class="eco-feature">
+                <div class="eco-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+                <div class="eco-text">
+                  <span class="eco-feat-label">FLEET DASHBOARD</span>
+                  <span class="eco-feat-desc">Enterprise-grade visibility for commercial fleet operators.</span>
+                </div>
+                <div class="eco-connection-dot"></div>
+              </div>
+            </div>
+
+          <div class="eco-center reveal-up" style="--delay:0.2s">
+            <div class="eco-canvas-container">
+              <div class="eco-arcs"></div>
+              <canvas id="ecosystem-canvas" style="width: 100%; max-width: 450px; height: 420px; cursor: grab;"></canvas>
+            </div>
+          </div>
+
+          <div class="eco-right reveal-right" style="--delay:0.4s">
+            <div class="eco-feature-list eco-right">
+              <div class="eco-feature">
+                <div class="eco-connection-dot"></div>
+                <div class="eco-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12A10 10 0 0 0 12 2v0a10 10 0 0 0-10 10v0a10 10 0 0 0 10 10v0a10 10 0 0 0 10-10v0z"/><path d="M12 22v-4"/><path d="M12 6V2"/><path d="M22 12h-4"/><path d="M6 12H2"/></svg></div>
+                <div class="eco-text">
+                  <span class="eco-feat-label">AI CLOUD PLATFORM</span>
+                  <span class="eco-feat-desc">Secure, scalable infrastructure processing billions of data points daily.</span>
+                </div>
+              </div>
+              <div class="eco-feature">
+                <div class="eco-connection-dot"></div>
+                <div class="eco-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                <div class="eco-text">
+                  <span class="eco-feat-label">CLOUD STORAGE</span>
+                  <span class="eco-feat-desc">Encrypted long-term storage with instant access to historical data.</span>
+                </div>
+              </div>
+              <div class="eco-feature">
+                <div class="eco-connection-dot"></div>
+                <div class="eco-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="14" rx="3" ry="3"/><line x1="8" y1="2" x2="8" y2="5"/><line x1="16" y1="2" x2="16" y2="5"/><line x1="8" y1="19" x2="8" y2="22"/><line x1="16" y1="19" x2="16" y2="22"/></svg></div>
+                <div class="eco-text">
+                  <span class="eco-feat-label">SMART WATCH</span>
+                  <span class="eco-feat-desc">Companion wearable app for glanceable EV status at a moment's notice.</span>
+                </div>
+              </div>
+              <div class="eco-feature">
+                <div class="eco-connection-dot"></div>
+                <div class="eco-icon-wrapper"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+                <div class="eco-text">
+                  <span class="eco-feat-label">FLEET SOLUTIONS</span>
+                  <span class="eco-feat-desc">API integrations with existing fleet management and telematics platforms.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="eco-stats reveal-up" style="--delay:0.4s">
+          <div class="eco-stat">
+            <span class="eco-stat-val mono">99.9%</span>
+            <span class="eco-stat-label mono">UPTIME SLA</span>
+          </div>
+          <div class="eco-stat">
+            <span class="eco-stat-val mono">&lt;100ms</span>
+            <span class="eco-stat-label mono">DATA LATENCY</span>
+          </div>
+          <div class="eco-stat">
+            <span class="eco-stat-val mono">256-bit</span>
+            <span class="eco-stat-label mono">ENCRYPTION</span>
+          </div>
+          <div class="eco-stat">
+            <span class="eco-stat-val mono">10M+</span>
+            <span class="eco-stat-label mono">DATA POINTS/DAY</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USE CASES BENTO -->
+    <section id="usecases" class="section usecases-section">
+      <div class="container">
+        <div class="usecases-pin-wrapper">
+          
+          <div class="usecases-left-images">
+            <div class="usecases-glow"></div>
+            <img src="/usecases-device.png?v=2" alt="Feature 1" class="scrolly-img active" id="img-1" />
+            <img src="/feature2.png" alt="Feature 2" class="scrolly-img" id="img-2" />
+            <img src="/feature3.png" alt="Feature 3" class="scrolly-img" id="img-3" />
+            <img src="/feature4.png" alt="Feature 4" class="scrolly-img" id="img-4" />
+            <img src="/feature5.png" alt="Feature 5" class="scrolly-img" id="img-5" />
+          </div>
+
+          <div class="usecases-right-text">
+            <div class="cylinder-wrapper">
+              
+              <div class="cylinder-item" id="text-1">
+                <div class="usecase-row-num mono">01</div>
+                <div class="cylinder-content">
+                  <h3>Fleet Operations &<br/>Management</h3>
+                  <p>Complete fleet diagnostics, real-time tracking, and performance reports — all in one place.</p>
+                </div>
+              </div>
+
+              <div class="cylinder-item" id="text-2">
+                <div class="usecase-row-num mono">02</div>
+                <div class="cylinder-content">
+                  <h3>Theft Protection &<br/>Recovery</h3>
+                  <p>AI-powered anti-theft protection, geo-fencing, instant alerts, and real-time forensic tracking.</p>
+                </div>
+              </div>
+
+              <div class="cylinder-item" id="text-3">
+                <div class="usecase-row-num mono">03</div>
+                <div class="cylinder-content">
+                  <h3>Predictive Maintenance<br/>& Diagnostics</h3>
+                  <p>AI diagnostics detect issues early, predict failures, and help extend vehicle life.</p>
+                </div>
+              </div>
+
+              <div class="cylinder-item" id="text-4">
+                <div class="usecase-row-num mono">04</div>
+                <div class="cylinder-content">
+                  <h3>Smart Urban Delivery<br/>Fleets</h3>
+                  <p>Optimized routing and charging schedules to maximize delivery uptime across the city.</p>
+                </div>
+              </div>
+
+              <div class="cylinder-item" id="text-5">
+                <div class="usecase-row-num mono">05</div>
+                <div class="cylinder-content">
+                  <h3>Remote Monitoring<br/>Across Devices</h3>
+                  <p>Monitor everything from your smartphone, smartwatch, or web dashboard simultaneously.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / CHOOSE YOUR PATH -->
+    <section id="cta" class="section cta-section">
+      <div class="container cta-inner">
+        <div class="cta-text reveal-left">
+          <div class="section-label"><span class="mono">CHOOSE YOUR FUTURE</span></div>
+          <h2 class="display-xl-cta">CHOOSE YOUR<br />PATH. WE'LL<br />POWER YOUR EV<br /><span class="text-green">JOURNEY.</span></h2>
+          <p>Whether you're an individual rider managing a fleet — we have the intelligent solution that powers your needs.</p>
+
+          <div class="cta-cards-container">
+            <!-- BOOK NOW CARD -->
+            <div class="cta-card cta-card-blue" id="book-card">
+              <div class="cta-card-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                  <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke-width="3"></path>
+                </svg>
+              </div>
+              <span class="cta-card-title">BOOK NOW</span>
+              <div class="cta-card-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <!-- INVEST NOW CARD -->
+            <div class="cta-card cta-card-green" id="invest-card">
+              <div class="cta-card-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2fd36b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="6" y1="20" x2="6" y2="16"></line>
+                  <line x1="10" y1="20" x2="10" y2="12"></line>
+                  <line x1="14" y1="20" x2="14" y2="10"></line>
+                  <line x1="18" y1="20" x2="18" y2="6"></line>
+                  <path d="M6 14l4-4 4 2 5-6"></path>
+                  <path d="M15 6h4v4"></path>
+                </svg>
+              </div>
+              <span class="cta-card-title">INVEST NOW</span>
+              <div class="cta-card-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-device reveal-right" style="--delay:0.2s">
+          <div class="cta-device-3d" style="animation: float 6s ease-in-out infinite; width: 100%; display: flex; justify-content: center; position: relative;">
+            <img src="/book.png" alt="Device Mockup" style="width: 100%; max-width: 460px; height: auto; object-fit: contain; mix-blend-mode: multiply;" />
+            <div class="cta-device-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-label reveal-up"><span class="mono">GET IN TOUCH</span></div>
+        <h2 class="headline-lg reveal-up">READY TO POWER<br />YOUR EV FUTURE?</h2>
+        <div class="contact-grid">
+          <div class="contact-form-wrap reveal-left">
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <input type="text" id="name" placeholder=" " required />
+                <label for="name" class="mono">YOUR NAME</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder=" " required />
+                <label for="email" class="mono">EMAIL ADDRESS</label>
+              </div>
+              <div class="form-group">
+                <select id="type" required>
+                  <option value="" disabled selected></option>
+                  <option value="individual">Individual Rider</option>
+                  <option value="fleet">Fleet Operator</option>
+                  <option value="partner">Partnership</option>
+                </select>
+                <label for="type" class="mono">I AM A...</label>
+              </div>
+              <div class="form-group">
+                <textarea id="message" rows="4" placeholder=" " required></textarea>
+                <label for="message" class="mono">YOUR MESSAGE</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                SEND MESSAGE →
+              </button>
+            </form>
+          </div>
+          <div class="contact-info reveal-right" style="--delay:0.2s">
+            <div class="contact-info-card">
+              <h3 class="mono">CONTACT INFO</h3>
+              <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div>
+                  <span class="mono info-label">HEADQUARTERS</span>
+                  <p>Rushikonda, Visakhapatnam, AP - 530045.</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">📧</span>
+                <div>
+                  <span class="mono info-label">EMAIL</span>
+                  <p><a href="mailto:contact@evcare.co.in" style="color: inherit; text-decoration: none;">contact@evcare.co.in</a></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="/favicon.png" alt="EvCare.AI" class="nav-logo-img" />
+            <span class="logo-text">EVCARE<span class="logo-dot">.</span>AI</span>
+          </a>
+          <p>The future of electric vehicle intelligence. Precision diagnostics for the connected world.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4 class="mono">QUICK LINKS</h4>
+            <ul>
+              <li><a href="#features">AI Diagnostics</a></li>
+              <li><a href="#solution">Device App</a></li>
+              <li><a href="#ecosystem">Ecosystem</a></li>
+              <li><a href="#usecases">Use Cases</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="mono">COMPANY</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="mono">CONNECT</h4>
+            <ul>
+              <li><a href="#">Twitter / X</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Discord</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <span class="mono">© 2025 EVCARE.AI — ALL RIGHTS RESERVED</span>
+        <div class="footer-legal">
+          <a href="#" class="mono" id="privacy-link">PRIVACY POLICY</a>
+          <a href="#" class="mono" id="terms-link">TERMS OF SERVICE</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal-overlay">
+      <div class="modal-card">
+        <button class="modal-close" id="closeModal">&times;</button>
+        
+        <!-- Selection Options View -->
+        <div id="optionsView">
+          <h3 class="modal-title mono">SELECT BOOKING TYPE</h3>
+          <p class="modal-subtitle">Choose the plan that fits your requirements</p>
+          <div class="modal-options">
+            <a href="#individual-booking" class="modal-option-card" id="btnIndividual">
+              <span class="modal-option-icon">👤</span>
+              <div class="modal-option-text">
+                <span class="mono modal-option-title">INDIVIDUALS</span>
+                <p>For personal EV owners who want detailed diagnostics.</p>
+              </div>
+            </a>
+            <a href="#fleet-booking" class="modal-option-card" id="btnFleet">
+              <span class="modal-option-icon">🚛</span>
+              <div class="modal-option-text">
+                <span class="mono modal-option-title">FLEET OPERATORS</span>
+                <p>Enterprise-grade solution for commercial fleets of any size.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Individual Booking Form View -->
+        <div id="individualFormView" style="display: none;">
+          <h3 class="modal-title mono" style="text-align: left; margin-bottom: 8px;">INDIVIDUAL BOOKING</h3>
+          <p class="modal-subtitle" style="text-align: left; margin-bottom: 24px;">Please fill out your details to book a unit</p>
+          <form id="individualBookingForm" class="booking-form" novalidate>
+            <div class="form-grid">
+              <div class="form-item">
+                <label class="mono form-label">FULL NAME</label>
+                <input type="text" required placeholder="Enter your full name" id="bookingName" class="form-input" />
+              </div>
+              <div class="form-item">
+                <label class="mono form-label">PHONE NUMBER</label>
+                <input type="tel" required placeholder="+91 00000 00000" id="bookingPhone" class="form-input" />
+              </div>
+              <div class="form-item">
+                <label class="mono form-label">EMAIL ID</label>
+                <input type="email" required placeholder="you@example.com" id="bookingEmail" class="form-input" />
+              </div>
+              <div class="form-item">
+                <label class="mono form-label">CITY / LOCATION</label>
+                <input type="text" required placeholder="e.g. Bangalore" id="bookingLocation" class="form-input" />
+              </div>
+              <div class="form-item full-width">
+                <label class="mono form-label">EV BIKE BRAND & MODEL</label>
+                <input type="text" required placeholder="e.g. Ather 450X" id="bookingBrand" class="form-input" />
+              </div>
+              <div class="form-item full-width">
+                <label class="mono form-label">BUDGET RANGE</label>
+                <div class="budget-grid">
+                  <button type="button" class="budget-btn active" data-value="3k-5k">₹3,000 – ₹5,000</button>
+                  <button type="button" class="budget-btn" data-value="5k-7k">₹5,000 – ₹7,000</button>
+                  <button type="button" class="budget-btn" data-value="7k-10k">₹7,000 – ₹10,000</button>
+                  <button type="button" class="budget-btn" data-value="10k+">₹10,000+</button>
+                </div>
+                <input type="hidden" name="budget" id="selectedBudget" value="3k-5k" />
+              </div>
+              <div class="form-item full-width">
+                <label class="mono form-label">OPTIONAL MESSAGE</label>
+                <textarea placeholder="Tell us more about your EV needs..." id="bookingMessage" rows="3" class="form-input form-textarea"></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="cta-selection-back" id="btnBackToOptions" style="font-size: 11px;">← BACK</button>
+              <button type="submit" class="btn btn-blue btn-sm" id="bookingSubmitBtn" style="padding: 10px 20px; font-size: 12px; border-radius: 12px; min-width: 165px; display: flex; align-items: center; justify-content: center; gap: 8px;">SUBMIT BOOKING →</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Fleet Booking Form View -->
+        <div id="fleetFormView" style="display: none;">
+          <h3 class="modal-title mono" style="text-align: left; margin-bottom: 8px;">FLEET OPERATORS BOOKING</h3>
+          <p class="modal-subtitle" style="text-align: left; margin-bottom: 24px;">Please fill out your company details to book units</p>
+          <form id="fleetBookingForm" class="booking-form" novalidate>
+            <div class="form-grid">
+              <div class="form-item">
+                <label class="mono form-label">COMPANY NAME</label>
+                <input type="text" required placeholder="e.g. Acme Logistics" id="fleetCompany" class="form-input" />
+              </div>
+              <div class="form-item">
+                <label class="mono form-label">CONTACT PERSON NAME</label>
+                <input type="text" required placeholder="Enter your full name" id="fleetContactName" class="form-input" />
+              </div>
+              <div class="form-item">
+                <label class="mono form-label">PHONE NUMBER</label>
+                <input type="tel" required placeholder="+91 00000 00000" id="fleetPhone" class="form-input" />
+              </div>
+              <div class="form-item">
+                <label class="mono form-label">BUSINESS EMAIL</label>
+                <input type="email" required placeholder="you@company.com" id="fleetEmail" class="form-input" />
+              </div>
+              <div class="form-item full-width">
+                <label class="mono form-label">CITY / OPERATING REGION</label>
+                <input type="text" required placeholder="e.g. Bangalore" id="fleetLocation" class="form-input" />
+              </div>
+              <div class="form-item full-width">
+                <label class="mono form-label">FLEET SIZE</label>
+                <div class="budget-grid">
+                  <button type="button" class="budget-btn active" data-value="1-10">1–10</button>
+                  <button type="button" class="budget-btn" data-value="10-50">10–50</button>
+                  <button type="button" class="budget-btn" data-value="50-100">50–100</button>
+                  <button type="button" class="budget-btn" data-value="100+">100+</button>
+                </div>
+                <input type="hidden" name="fleet_size" id="selectedFleetSize" value="1-10" />
+              </div>
+              <div class="form-item full-width">
+                <label class="mono form-label">ADDITIONAL NOTES</label>
+                <textarea placeholder="Tell us more about your operational needs..." id="fleetNotes" rows="3" class="form-input form-textarea"></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="cta-selection-back" id="btnFleetBackToOptions" style="font-size: 11px;">← BACK</button>
+              <button type="submit" class="btn btn-blue btn-sm" id="fleetSubmitBtn" style="padding: 10px 20px; font-size: 12px; border-radius: 12px; min-width: 165px; display: flex; align-items: center; justify-content: center; gap: 8px;">SUBMIT BOOKING →</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Investor Modal -->
+    <div id="investorModal" class="modal-overlay">
+      <div class="modal-card wide">
+        <button class="modal-close" id="closeInvestorModal">&times;</button>
+        <h3 class="modal-title mono" style="text-align: left; margin-bottom: 8px;">INVESTOR ENQUIRY</h3>
+        <p class="modal-subtitle" style="text-align: left; margin-bottom: 24px;">Submit your details to explore investment opportunities</p>
+        <form id="investorBookingForm" class="booking-form" novalidate>
+          <div class="form-grid">
+            <div class="form-item">
+              <label class="mono form-label">FULL NAME</label>
+              <input type="text" required placeholder="Enter your full name" id="investorName" class="form-input" />
+            </div>
+            <div class="form-item">
+              <label class="mono form-label">MOBILE NUMBER</label>
+              <input type="tel" required placeholder="+91 00000 00000" id="investorPhone" class="form-input" />
+            </div>
+            <div class="form-item">
+              <label class="mono form-label">EMAIL ADDRESS</label>
+              <input type="email" required placeholder="you@example.com" id="investorEmail" class="form-input" />
+            </div>
+            <div class="form-item">
+              <label class="mono form-label">CITY</label>
+              <input type="text" required placeholder="e.g. Bangalore" id="investorLocation" class="form-input" />
+            </div>
+            <div class="form-item full-width">
+              <label class="mono form-label">AREA OF INTEREST</label>
+              <input type="text" required placeholder="e.g. Dealership, Charging Infrastructure, Equity" id="investorArea" class="form-input" />
+            </div>
+            <div class="form-item full-width">
+              <label class="mono form-label">INVESTMENT CAPACITY</label>
+              <div class="budget-grid">
+                <button type="button" class="budget-btn active" data-value="5L-10L">₹5L – ₹10L</button>
+                <button type="button" class="budget-btn" data-value="10L-25L">₹10L – ₹25L</button>
+                <button type="button" class="budget-btn" data-value="25L-50L">₹25L – ₹50L</button>
+                <button type="button" class="budget-btn" data-value="50L-1Cr">₹50L – ₹1Cr</button>
+                <button type="button" class="budget-btn" data-value="1Cr+" style="grid-column: span 2;">₹1Cr+</button>
+              </div>
+              <input type="hidden" name="investment_capacity" id="selectedCapacity" value="5L-10L" />
+            </div>
+            <div class="form-item full-width">
+              <label class="mono form-label">ADDITIONAL MESSAGE / REASON FOR INTEREST</label>
+              <textarea placeholder="Tell us more about your investment goals..." id="investorMessage" rows="3" class="form-input form-textarea"></textarea>
+            </div>
+          </div>
+          <div class="form-actions" style="justify-content: flex-end;">
+            <button type="submit" class="btn btn-blue btn-sm" id="investorSubmitBtn" style="padding: 10px 20px; font-size: 12px; border-radius: 12px; min-width: 165px; display: flex; align-items: center; justify-content: center; gap: 8px;">SUBMIT ENQUIRY →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal-overlay">
+      <div class="modal-card wide" style="max-height: 85vh; display: flex; flex-direction: column;">
+        <button class="modal-close" id="closePrivacyModal">&times;</button>
+        <h3 class="modal-title mono" style="margin-bottom: 8px;">PRIVACY POLICY</h3>
+        <p class="mono" style="font-size: 11px; color: var(--text-slate); margin-bottom: 20px;">Last Updated: October 9, 2025</p>
+        
+        <div class="privacy-content" style="flex: 1; overflow-y: auto; padding-right: 8px; text-align: left; font-size: 13px; line-height: 1.6; color: var(--dark-slate); font-family: var(--font-main);">
+          <p style="margin-bottom: 16px;">This Privacy Policy (“Policy”) governs how InnoVibe Care.EV Mobility India Pvt Ltd (“Company”, “we”, “our”, or “us”), operating under the brand “InnoVibe Care.EV”, collects, uses, protects, and discloses your personal information via our websites (www.innovibemobility.com) and the Care.EV App.</p>
+          
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">1. INFORMATION WE COLLECT</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;"><strong>Personal Identification Data:</strong> Name, address, phone number, email, date of birth, gender, and registration details.</li>
+            <li style="margin-bottom: 6px;"><strong>Service Data:</strong> Vehicle information, booking and transaction records, payment details, insurance and claim data, rental service details.</li>
+            <li style="margin-bottom: 6px;"><strong>Technical Data:</strong> Browser/device data, IP address, location, cookies, log files, usage data, and device identifiers.</li>
+            <li style="margin-bottom: 6px;"><strong>Communication Data:</strong> Customer service queries, feedback, complaint details, email correspondence.</li>
+            <li style="margin-bottom: 6px;"><strong>Other Data:</strong> Data voluntarily provided via websites, App, surveys, marketing campaigns, or social media.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">2. USE OF INFORMATION</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">Providing and managing EV services (servicing, conversions, charging, rentals, fleet, insurance, claims, spares).</li>
+            <li style="margin-bottom: 6px;">Processing bookings, payments, refunds, and support requests.</li>
+            <li style="margin-bottom: 6px;">Customer communications — sending booking updates, notifications, offers, service reminders.</li>
+            <li style="margin-bottom: 6px;">Maintaining and improving websites and App functionality.</li>
+            <li style="margin-bottom: 6px;">Fulfilling legal and regulatory requirements.</li>
+            <li style="margin-bottom: 6px;">Marketing and promotional activities (if consented).</li>
+            <li style="margin-bottom: 6px;">Analytics to enhance service quality and user experience.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">3. SHARING & DISCLOSURE</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">With authorised employees, service partners, franchisees, and affiliates necessary to deliver requested services.</li>
+            <li style="margin-bottom: 6px;">With payment gateway providers for transaction processing.</li>
+            <li style="margin-bottom: 6px;">With insurers, claim handlers, and fleet partners for relevant services.</li>
+            <li style="margin-bottom: 6px;">With government authorities, law enforcement, or regulatory bodies when required by law or investigation.</li>
+            <li style="margin-bottom: 6px;">With third-party vendors for analytics, cloud hosting, IT support, or marketing — but only under strict confidentiality agreements.</li>
+          </ul>
+          <p style="margin-bottom: 16px;">We do not sell or rent your personal information to third parties for unrelated purposes.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">4. DATA SECURITY</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">Secure servers and encrypted connections for storage and transmission.</li>
+            <li style="margin-bottom: 6px;">Limited, need-to-know access for staff handling data.</li>
+            <li style="margin-bottom: 6px;">Regular security audits and vulnerability assessments.</li>
+            <li style="margin-bottom: 6px;">Technical controls, password protection, and data backups.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">5. YOUR RIGHTS</h4>
+          <p style="margin-bottom: 12px;">You hold the following rights regarding your data:</p>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;"><strong>Access:</strong> Request a copy of your personal data held.</li>
+            <li style="margin-bottom: 6px;"><strong>Correction:</strong> Update or rectify inaccurate personal data.</li>
+            <li style="margin-bottom: 6px;"><strong>Deletion:</strong> Request deletion of your information, subject to legal/regulatory retention requirements.</li>
+            <li style="margin-bottom: 6px;"><strong>Withdraw Consent:</strong> Opt out of marketing at any time.</li>
+            <li style="margin-bottom: 6px;"><strong>Objection:</strong> Restrict processing under applicable law.</li>
+            <li style="margin-bottom: 6px;"><strong>Data Portability:</strong> Request transfer of data to another service/provider.</li>
+          </ul>
+          <p style="margin-bottom: 16px;">To exercise these rights, email <a href="mailto:Customercare@innovibemobility.com" style="color: var(--primary-mid); text-decoration: underline;">Customercare@innovibemobility.com</a>.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">6. COOKIES & TRACKING</h4>
+          <p style="margin-bottom: 12px;">Our websites and App use cookies and similar technologies to:</p>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">Improve user experience and analyse site traffic.</li>
+            <li style="margin-bottom: 6px;">Remember user preferences and login sessions.</li>
+            <li style="margin-bottom: 6px;">Track usage for security and performance.</li>
+          </ul>
+          <p style="margin-bottom: 16px;">You may disable cookies in your browser settings, but certain site features may not function properly.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">7. DATA RETENTION</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">Personal data is retained only as long as necessary for service fulfilment, compliance, or regulatory requirements.</li>
+            <li style="margin-bottom: 6px;">Booking, payment, and service records are retained per statutory guidelines.</li>
+            <li style="margin-bottom: 6px;">Data may be anonymized or deleted when no longer necessary.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">8. THIRD-PARTY LINKS</h4>
+          <p style="margin-bottom: 16px;">Our sites and App may link to external organizations or social media platforms. We are not responsible for their privacy practices. Please review their privacy policies before sharing personal data.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">9. CHILDREN’S PRIVACY</h4>
+          <p style="margin-bottom: 16px;">Our services are not directly intended for persons under 18 years. If information of minors is provided, parental consent must be ensured.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">10. CHANGES TO THIS POLICY</h4>
+          <p style="margin-bottom: 16px;">We reserve the right to amend this Policy at any time. Updates will be published on our websites and App. Continued use means acceptance of the revised Policy.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">11. CONTACT US</h4>
+          <p style="margin-bottom: 16px;">
+            Email: <a href="mailto:Customercare@innovibemobility.com" style="color: var(--primary-mid); text-decoration: underline;">Customercare@innovibemobility.com</a><br />
+            Customer Care: +91 9014336878<br />
+            Address: Gitam iTBI, VDA, Rushikonda, Visakhapatnam, AP - 530045.
+          </p>
+          
+          <p style="font-style: italic; border-top: 1px solid var(--border-glass); padding-top: 12px; font-size: 12px; margin-top: 24px; color: var(--text-slate);">
+            This privacy policy applies to all customers engaging with InnoVibe Care.EV Mobility India Pvt Ltd services through www.innovibemobility.com and the Care.EV App.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terms & Conditions Modal -->
+    <div id="termsModal" class="modal-overlay">
+      <div class="modal-card wide" style="max-height: 85vh; display: flex; flex-direction: column;">
+        <button class="modal-close" id="closeTermsModal">&times;</button>
+        <h3 class="modal-title mono" style="margin-bottom: 8px;">TERMS & CONDITIONS</h3>
+        <p class="mono" style="font-size: 11px; color: var(--text-slate); margin-bottom: 20px;">Last Updated: October 9, 2025</p>
+        
+        <div class="privacy-content" style="flex: 1; overflow-y: auto; padding-right: 8px; text-align: left; font-size: 13px; line-height: 1.6; color: var(--dark-slate); font-family: var(--font-main);">
+          <p style="margin-bottom: 16px;">These Terms & Conditions ("Terms") govern your access to and use of the websites www.innovibemobility.com and the Care.EV mobile application ("App"), and services provided by InnoVibe Care.EV Mobility India Pvt Ltd ("Company," "we," "our," or "us"), operating under the brand name "InnoVibe Care.EV" with the tagline Your EV, Our Expert Care. By accessing our websites, App, or using our services, you ("user," "you," or "customer") agree to comply with these Terms.</p>
+          
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">COMPANY INFORMATION</h4>
+          <p style="margin-bottom: 16px;">
+            <strong>Company Name:</strong> InnoVibe Care.EV Mobility India Pvt Ltd<br />
+            <strong>Brand:</strong> InnoVibe Care.EV<br />
+            <strong>Head Office:</strong> Gitam iTBI, VDA, Rushikonda, Visakhapatnam, AP - 530045.<br />
+            <strong>Customer Care:</strong> <a href="tel:+919014336878" style="color: var(--primary-mid); text-decoration: underline;">+91 9014336878</a><br />
+            <strong>Email:</strong> <a href="mailto:Customercare@innovibemobility.com" style="color: var(--primary-mid); text-decoration: underline;">Customercare@innovibemobility.com</a>
+          </p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">SCOPE OF SERVICES</h4>
+          <p style="margin-bottom: 12px;">Our services include but are not limited to:</p>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">Multi-brand EV servicing for 2, 3, and 4 wheelers</li>
+            <li style="margin-bottom: 6px;">EV conversion (Hybrid & Full EV)</li>
+            <li style="margin-bottom: 6px;">EV charging station solutions (home, public, and fast charging)</li>
+            <li style="margin-bottom: 6px;">EV insurance and accidental claim support</li>
+            <li style="margin-bottom: 6px;">EV fleet and rental services</li>
+            <li style="margin-bottom: 6px;">EV spare parts and accessories</li>
+            <li style="margin-bottom: 6px;">EV battery replacement, swapping, and upgrades</li>
+            <li style="margin-bottom: 6px;">Service booking through Care.EV App and www.evcare.co.in</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">USER ELIGIBILITY</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">You must be at least 18 years old and legally capable of entering into a contract under the laws of India.</li>
+            <li style="margin-bottom: 6px;">Users must provide accurate, current, and complete registration details during bookings.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">BOOKINGS & PAYMENTS</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">Bookings for services can be made through the Care.EV App or website.</li>
+            <li style="margin-bottom: 6px;">Payments must be made online through the designated payment gateways integrated into our platforms.</li>
+            <li style="margin-bottom: 6px;">Service prices, offers, and discounts are subject to change without prior notice.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">CANCELLATIONS & REFUNDS</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">Customers may request cancellations as per the specific service's cancellation policy.</li>
+            <li style="margin-bottom: 6px;">Refund requests must be submitted with booking details to <a href="mailto:refunds@evcare.co.in" style="color: var(--primary-mid); text-decoration: underline;">refunds@evcare.co.in</a>.</li>
+            <li style="margin-bottom: 6px;">Refund approvals are processed within 7–10 business days, subject to verification of eligibility.</li>
+            <li style="margin-bottom: 6px;">Convenience fees, processing charges, or partially availed services may not be refunded.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">SERVICE TERMS</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">Our company will exercise reasonable care and skill in providing services, but service timelines may vary depending on availability and technical requirements.</li>
+            <li style="margin-bottom: 6px;">EV conversions, repairs, and upgrades will be carried out as per prescribed safety standards. Customers acknowledge potential risks inherent in mechanical/electrical work.</li>
+            <li style="margin-bottom: 6px;">Use of genuine or equivalent quality spare parts is assured; in some cases, alternatives may be recommended for better efficiency or safety.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">WARRANTY & LIABILITY</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">Warranty on parts and services is subject to manufacturer terms and specific service categories.</li>
+            <li style="margin-bottom: 6px;">InnoVibe Care.EV Mobility India Pvt Ltd is not liable for damages arising from misuse, unauthorized modifications, or third-party interventions.</li>
+            <li style="margin-bottom: 6px;">We are not responsible for any indirect, incidental, or consequential damages such as loss of business, data, or vehicle downtime caused during or after our services.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">INSURANCE & CLAIMS</h4>
+          <p style="margin-bottom: 16px;">Assistance with EV insurance and accidental claims is provided for convenience. However, the final settlement is subject to verification and approval by the respective insurance company. InnoVibe Care.EV shall not be held liable for delays or rejections from third-party insurers.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">INTELLECTUAL PROPERTY</h4>
+          <p style="margin-bottom: 16px;">All content on our websites, App, branding, logos, and materials are the intellectual property of InnoVibe Care.EV Mobility India Pvt Ltd. Users are prohibited from copying, distributing, or modifying any content without written consent.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">PRIVACY & DATA PROTECTION</h4>
+          <p style="margin-bottom: 16px;">By using our services, you agree that your personal and payment data may be stored and processed for providing services. We take reasonable technical and administrative measures to protect your data. For details, refer to our Privacy Policy available on our websites.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">THIRD-PARTY LINKS & SERVICES</h4>
+          <p style="margin-bottom: 16px;">Websites or the App may include links to third-party platforms. We are not responsible for their content, accuracy, or reliability. Accessing external websites is at your own risk.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">TERMINATION OF SERVICES</h4>
+          <p style="margin-bottom: 12px;">We reserve the right to terminate or block access to services if:</p>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">You fail to comply with these Terms.</li>
+            <li style="margin-bottom: 6px;">Fraudulent, abusive, or illegal activity is detected.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">GOVERNING LAW & DISPUTE RESOLUTION</h4>
+          <ul style="margin-bottom: 16px; padding-left: 20px; list-style-type: disc;">
+            <li style="margin-bottom: 6px;">These Terms are governed by the laws of India.</li>
+            <li style="margin-bottom: 6px;">Any disputes shall fall under the exclusive jurisdiction of the courts of Visakhapatnam, Andhra Pradesh.</li>
+          </ul>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">AMENDMENTS</h4>
+          <p style="margin-bottom: 16px;">We reserve the right to modify or amend these Terms at any time. Updated terms will be posted on our websites, and continued use of services implies acceptance of the revised Terms.</p>
+
+          <h4 class="mono" style="font-size: 12px; color: var(--primary); margin: 20px 0 8px; letter-spacing: 0.05em;">CONTACT</h4>
+          <p style="margin-bottom: 16px;">
+            Customer Care: +91 9014336878<br />
+            Email: <a href="mailto:Customercare@innovibemobility.com" style="color: var(--primary-mid); text-decoration: underline;">Customercare@innovibemobility.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+      import { initScooter3D } from '/src/scooter3d.js'
+      const scooterCanvas = document.getElementById('scooter-canvas')
+      if (scooterCanvas) {
+        initScooter3D(scooterCanvas)
+      }
+    </script>
+  </body>
+</html>
