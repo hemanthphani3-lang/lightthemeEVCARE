@@ -5,6 +5,25 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+// ── Google Sheets Web App Endpoint ──
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxGTJf3R74_6N21f_RhihHhzrJougKK12bUEKccQdF18iCJ-tCnt8KimORlyppzhqFY/exec'
+
+function submitToGoogleSheets(data, onSuccess, onError) {
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(() => onSuccess())
+  .catch(err => {
+    console.error('Sheets submission error:', err)
+    onError()
+  })
+}
+
 // ── 3D Hero & Ecosystem Devices ───────────────────────────────────────────────────
 const heroCanvas = document.getElementById('hero-canvas')
 const ecosystemCanvas = document.getElementById('ecosystem-canvas')
@@ -234,12 +253,26 @@ form.addEventListener('submit', (e) => {
   const btn = document.getElementById('submitBtn')
   btn.textContent = 'SENDING...'
   btn.disabled = true
-  setTimeout(() => {
+
+  const data = {
+    timestamp: new Date().toLocaleString(),
+    formType: 'Contact',
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    type: document.getElementById('type').value,
+    message: document.getElementById('message').value
+  }
+
+  submitToGoogleSheets(data, () => {
     btn.textContent = 'SEND MESSAGE →'
     btn.disabled = false
     form.reset()
     showToast('✓ MESSAGE SENT SUCCESSFULLY')
-  }, 1200)
+  }, () => {
+    btn.textContent = 'SEND MESSAGE →'
+    btn.disabled = false
+    showToast('❌ SUBMISSION FAILED. PLEASE TRY AGAIN.')
+  })
 })
 
 function createToast() {
@@ -547,7 +580,19 @@ if (bookCard && bookingModal) {
       const originalHtml = submitBtn.innerHTML
       submitBtn.innerHTML = `<span class="btn-spinner"></span> SUBMITTING...`
 
-      setTimeout(() => {
+      const data = {
+        timestamp: new Date().toLocaleString(),
+        formType: 'Individual Booking',
+        name: nameInput.value,
+        phone: phoneInput.value,
+        email: emailInput.value,
+        location: locationInput.value,
+        brandModel: brandInput.value,
+        budget: selectedBudget ? selectedBudget.value : '',
+        message: document.getElementById('bookingMessage') ? document.getElementById('bookingMessage').value : ''
+      }
+
+      submitToGoogleSheets(data, () => {
         submitBtn.style.background = '#2fd36b'
         submitBtn.style.borderColor = '#2fd36b'
         submitBtn.innerHTML = `✓ BOOKED SUCCESS!`
@@ -570,9 +615,15 @@ if (bookCard && bookingModal) {
 
           showToast('✓ INDIVIDUAL BOOKING REGISTERED')
         }, 1000)
-      }, 1500)
+      }, () => {
+        submitBtn.disabled = false
+        submitBtn.innerHTML = originalHtml
+        showToast('❌ SUBMISSION FAILED. PLEASE TRY AGAIN.')
+      })
     })
   }
+
+
 
   // ──────────────── FLEET FORM CONTROLS ────────────────
   const fleetBookingForm = document.getElementById('fleetBookingForm')
@@ -627,7 +678,19 @@ if (bookCard && bookingModal) {
       const originalHtml = fleetSubmitBtn.innerHTML
       fleetSubmitBtn.innerHTML = `<span class="btn-spinner"></span> SUBMITTING...`
 
-      setTimeout(() => {
+      const data = {
+        timestamp: new Date().toLocaleString(),
+        formType: 'Fleet Booking',
+        companyName: fleetCompany.value,
+        name: fleetContactName.value,
+        phone: fleetPhone.value,
+        email: fleetEmail.value,
+        location: fleetLocation.value,
+        fleetSize: selectedFleetSize ? selectedFleetSize.value : '',
+        message: document.getElementById('fleetMessage') ? document.getElementById('fleetMessage').value : ''
+      }
+
+      submitToGoogleSheets(data, () => {
         fleetSubmitBtn.style.background = '#2fd36b'
         fleetSubmitBtn.style.borderColor = '#2fd36b'
         fleetSubmitBtn.innerHTML = `✓ BOOKED SUCCESS!`
@@ -650,7 +713,11 @@ if (bookCard && bookingModal) {
 
           showToast('✓ FLEET BOOKING REGISTERED')
         }, 1000)
-      }, 1500)
+      }, () => {
+        fleetSubmitBtn.disabled = false
+        fleetSubmitBtn.innerHTML = originalHtml
+        showToast('❌ SUBMISSION FAILED. PLEASE TRY AGAIN.')
+      })
     })
   }
 
@@ -730,7 +797,19 @@ if (bookCard && bookingModal) {
         const originalHtml = investorSubmitBtn.innerHTML
         investorSubmitBtn.innerHTML = `<span class="btn-spinner"></span> SUBMITTING...`
 
-        setTimeout(() => {
+        const data = {
+          timestamp: new Date().toLocaleString(),
+          formType: 'Investor Enquiry',
+          name: investorName.value,
+          phone: investorPhone.value,
+          email: investorEmail.value,
+          location: investorLocation.value,
+          areaOfInterest: investorArea.value,
+          investmentCapacity: selectedCapacity ? selectedCapacity.value : '',
+          message: document.getElementById('investorMessage') ? document.getElementById('investorMessage').value : ''
+        }
+
+        submitToGoogleSheets(data, () => {
           investorSubmitBtn.style.background = '#2fd36b'
           investorSubmitBtn.style.borderColor = '#2fd36b'
           investorSubmitBtn.innerHTML = `✓ ENQUIRY SENT SUCCESS!`
@@ -753,7 +832,11 @@ if (bookCard && bookingModal) {
 
             showToast('✓ INVESTOR ENQUIRY REGISTERED')
           }, 1000)
-        }, 1500)
+        }, () => {
+          investorSubmitBtn.disabled = false
+          investorSubmitBtn.innerHTML = originalHtml
+          showToast('❌ SUBMISSION FAILED. PLEASE TRY AGAIN.')
+        })
       })
     }
   }
