@@ -1881,8 +1881,8 @@ body.loading {
 
 .preloader-content {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1893,18 +1893,18 @@ body.loading {
   top: 0;
   left: 0;
   transform: rotate(-90deg);
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
 }
 
 .progress-ring__circle {
-  stroke-dasharray: 339.292;
-  stroke-dashoffset: 339.292;
+  stroke-dasharray: 464.956;
+  stroke-dashoffset: 464.956;
 }
 
 .preloader-logo-wrap {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -899,7 +899,7 @@ if (bookCard && bookingModal) {
   const preloader = document.getElementById('preloader')
   
   if (circle) {
-    const circumference = 54 * 2 * Math.PI
+    const circumference = 74 * 2 * Math.PI
     
     circle.style.strokeDasharray = `${circumference} ${circumference}`
     circle.style.strokeDashoffset = circumference
