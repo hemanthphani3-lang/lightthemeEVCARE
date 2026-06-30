@@ -941,7 +941,7 @@ if (bookCard && bookingModal) {
       duration: 0.4,
       transformOrigin: '50% 50%',
       ease: 'power2.in'
-    }, '+=0.1')
+    })
     
     tl.to(preloaderText, {
       opacity: 0,
