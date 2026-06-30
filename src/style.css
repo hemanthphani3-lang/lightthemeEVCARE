@@ -1857,3 +1857,73 @@ body.modal-open {
 @keyframes btn-spin {
   to { transform: rotate(360deg); }
 }
+
+/* ── PRELOADER STYLES ── */
+body.loading {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.preloader-content {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  width: 120px;
+  height: 120px;
+}
+
+.progress-ring__circle {
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+}
+
+.preloader-logo-wrap {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.preloader-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1);
+}
+
+.preloader-text {
+  margin-top: 24px;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--dark-slate);
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+}

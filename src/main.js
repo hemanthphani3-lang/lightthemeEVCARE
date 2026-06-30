@@ -892,4 +892,76 @@ if (bookCard && bookingModal) {
       if (e.target === termsModal) hideTermsModal()
     })
   }
+  // ── Preloader Animation ──
+  const circle = document.getElementById('preloaderCircle')
+  const preloaderText = document.querySelector('.preloader-text')
+  const preloaderLogo = document.querySelector('.preloader-logo')
+  const preloader = document.getElementById('preloader')
+  
+  if (circle) {
+    const circumference = 54 * 2 * Math.PI
+    
+    circle.style.strokeDasharray = `${circumference} ${circumference}`
+    circle.style.strokeDashoffset = circumference
+
+    const setProgress = (percent) => {
+      const offset = circumference - (percent / 100) * circumference
+      circle.style.strokeDashoffset = offset
+    }
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        document.body.classList.remove('loading')
+      }
+    })
+
+    // 1. Fade in text & logo
+    tl.to(preloaderText, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    })
+
+    // 2. Animate the progress circle from 0% to 100%
+    const progressObj = { value: 0 }
+    tl.to(progressObj, {
+      value: 100,
+      duration: 1.8,
+      ease: 'power1.inOut',
+      onUpdate: () => {
+        setProgress(progressObj.value)
+      }
+    })
+
+    // 3. Zoom in the logo and fade out the preloader overlay to reveal page
+    tl.to(circle, {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.4,
+      transformOrigin: '50% 50%',
+      ease: 'power2.in'
+    }, '+=0.1')
+    
+    tl.to(preloaderText, {
+      opacity: 0,
+      y: -10,
+      duration: 0.4,
+      ease: 'power2.in'
+    }, '<')
+
+    tl.to(preloaderLogo, {
+      scale: 25,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.inOut'
+    }, '<')
+
+    tl.to(preloader, {
+      opacity: 0,
+      pointerEvents: 'none',
+      duration: 0.8,
+      ease: 'power2.out'
+    }, '<+=0.1')
+  }
 }
