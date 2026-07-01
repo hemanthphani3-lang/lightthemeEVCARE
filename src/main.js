@@ -348,41 +348,20 @@ const bentoGraph = document.querySelector('.bento-graph')
 if (bentoGraph) bentoObserver.observe(bentoGraph)
 
 // ── Usecases Heading Scroll Animation ──────────────────────────────────────────
-const usecasesHeading = document.querySelector('.usecases-section .headline-lg')
-const usecasesLabel = document.querySelector('.usecases-section .section-label')
+const usecasesHeader = document.querySelector('.usecases-header')
 
-if (usecasesHeading) {
-  gsap.fromTo(usecasesHeading, 
+if (usecasesHeader) {
+  gsap.fromTo(usecasesHeader, 
     { 
       opacity: 0, 
       y: 40,
-      scale: 0.95
+      scale: 0.96
     },
     {
       opacity: 1,
       y: 0,
       scale: 1,
-      duration: 1,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '.usecases-section',
-        start: 'top 85%',
-        toggleActions: 'play none none none'
-      }
-    }
-  )
-}
-
-if (usecasesLabel) {
-  gsap.fromTo(usecasesLabel,
-    {
-      opacity: 0,
-      y: 20
-    },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
+      duration: 1.2,
       ease: 'power3.out',
       scrollTrigger: {
         trigger: '.usecases-section',
@@ -420,6 +399,20 @@ if (pinWrapper && scrollyImages.length > 0 && cylinderItems.length > 0) {
     scrub: 0.5, // Added a slight 0.5s ease to smooth out wheel ticks without feeling restricted
     onUpdate: (self) => {
       const progress = self.progress
+
+      // Fade out header as we scroll
+      const headerEl = document.querySelector('.usecases-header')
+      if (headerEl) {
+        let headerOpacity = 1 - (progress / 0.08) // Fade out completely within 8% of the scroll timeline
+        if (headerOpacity < 0) headerOpacity = 0
+        if (headerOpacity > 1) headerOpacity = 1
+        gsap.set(headerEl, {
+          opacity: headerOpacity,
+          y: -25 * (1 - headerOpacity), // Slide up slightly as it disappears
+          pointerEvents: headerOpacity > 0 ? 'auto' : 'none'
+        })
+      }
+
       // Total rotation needed to bring the last item to the front
       const maxRotation = (numItems - 1) * anglePerItem
       const currentRotation = progress * maxRotation

@@ -1576,6 +1576,25 @@ body.modal-open {
   color: var(--text-base);
   padding: 0;
   overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+.usecases-section > .container {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.usecases-header {
+  position: absolute;
+  top: clamp(24px, 5vh, 60px);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
 }
 
 .usecases-section .headline-lg {
