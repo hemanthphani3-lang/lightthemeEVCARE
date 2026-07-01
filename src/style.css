@@ -1540,7 +1540,11 @@ body.modal-open {
 
 .revealed {
   opacity: 1 !important;
-  transform: translate(0, 0) !important;
+}
+.reveal-up.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed {
+  transform: translate(0, 0);
 }
 
 /* 14. TOAST */
