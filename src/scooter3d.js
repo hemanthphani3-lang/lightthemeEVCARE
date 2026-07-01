@@ -11,14 +11,38 @@ export function initScooter3D(canvasEl) {
   camera.lookAt(0, 0, 0)
   scene.add(camera)
 
-  const renderer = new THREE.WebGLRenderer({
-    canvas: canvasEl,
-    alpha: true,
-    antialias: true,
-    powerPreference: "high-performance"
-  })
-  renderer.setSize(canvasEl.clientWidth, canvasEl.clientHeight, false)
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+  let renderer = null
+  try {
+    renderer = new THREE.WebGLRenderer({
+      canvas: canvasEl,
+      alpha: true,
+      antialias: true,
+      powerPreference: "high-performance"
+    })
+    renderer.setSize(canvasEl.clientWidth, canvasEl.clientHeight, false)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+    canvasEl.addEventListener('webglcontextlost', (e) => {
+      e.preventDefault()
+      console.warn('Scooter Three.js WebGL context lost! Displaying fallback image.')
+      canvasEl.style.display = 'none'
+      const fallbackImg = canvasEl.nextElementSibling
+      if (fallbackImg && (fallbackImg.tagName === 'IMG' || fallbackImg.classList.contains('scooter-canvas-fallback'))) {
+        fallbackImg.style.display = 'block'
+      }
+    }, false)
+
+  } catch (err) {
+    console.warn("Scooter WebGLRenderer creation failed: WebGL blocked/unsupported. Showing fallback.", err)
+    canvasEl.style.display = 'none'
+    const fallbackImg = canvasEl.nextElementSibling
+    if (fallbackImg && (fallbackImg.tagName === 'IMG' || fallbackImg.classList.contains('scooter-canvas-fallback'))) {
+      fallbackImg.style.display = 'block'
+    }
+    return {
+      dispose: () => {}
+    }
+  }
 
   const light = new THREE.DirectionalLight(0xffffff, 2)
   light.position.set(5, 5, 5)

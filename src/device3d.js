@@ -21,19 +21,49 @@ export function initDevice3D(canvasEl, options = {}) {
   let platformGlowCurrent = 1.0
 
   // ── Renderer ───────────────────────────────────────────────────────────────
-  const renderer = new THREE.WebGLRenderer({
-    canvas: canvasEl,
-    antialias: true,
-    alpha: true,
-    powerPreference: 'high-performance',
-  })
-  renderer.setSize(canvasEl.clientWidth, canvasEl.clientHeight, false)
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-  renderer.shadowMap.enabled    = true
-  renderer.shadowMap.type       = THREE.PCFSoftShadowMap
-  renderer.toneMapping          = THREE.ACESFilmicToneMapping
-  renderer.toneMappingExposure  = 0.95  // Dialed back to prevent overexposure
-  renderer.outputColorSpace     = THREE.SRGBColorSpace
+  let renderer = null
+  try {
+    renderer = new THREE.WebGLRenderer({
+      canvas: canvasEl,
+      antialias: true,
+      alpha: true,
+      powerPreference: 'high-performance',
+    })
+    renderer.setSize(canvasEl.clientWidth, canvasEl.clientHeight, false)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.shadowMap.enabled    = true
+    renderer.shadowMap.type       = THREE.PCFSoftShadowMap
+    renderer.toneMapping          = THREE.ACESFilmicToneMapping
+    renderer.toneMappingExposure  = 0.95  // Dialed back to prevent overexposure
+    renderer.outputColorSpace     = THREE.SRGBColorSpace
+
+    // Listen for WebGL context loss at runtime
+    canvasEl.addEventListener('webglcontextlost', (e) => {
+      e.preventDefault()
+      console.warn('Three.js WebGL context lost! Displaying fallback image.')
+      canvasEl.style.display = 'none'
+      const fallbackImg = canvasEl.nextElementSibling
+      if (fallbackImg && (fallbackImg.tagName === 'IMG' || fallbackImg.classList.contains('hero-canvas-fallback') || fallbackImg.classList.contains('ecosystem-canvas-fallback'))) {
+        fallbackImg.style.display = 'block'
+      }
+      const spinner = canvasEl.parentElement?.querySelector('div')
+      if (spinner) spinner.remove()
+    }, false)
+
+  } catch (err) {
+    console.warn("Three.js WebGLRenderer creation failed: WebGL context blocked or unsupported. Showing fallback.", err)
+    canvasEl.style.display = 'none'
+    const fallbackImg = canvasEl.nextElementSibling
+    if (fallbackImg && (fallbackImg.tagName === 'IMG' || fallbackImg.classList.contains('hero-canvas-fallback') || fallbackImg.classList.contains('ecosystem-canvas-fallback'))) {
+      fallbackImg.style.display = 'block'
+    }
+    const spinner = canvasEl.parentElement?.querySelector('div')
+    if (spinner) spinner.remove()
+    return {
+      dispose: () => {},
+      setPlatformGlow: () => {}
+    }
+  }
 
   // ── Environment Map (Crucial for premium reflections) ──────────────────────
   const pmremGenerator = new THREE.PMREMGenerator(renderer)

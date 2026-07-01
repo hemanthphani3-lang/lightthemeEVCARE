@@ -973,6 +973,7 @@ if (bookCard && bookingModal) {
     tl.to(preloader, {
       opacity: 0,
       pointerEvents: 'none',
+      display: 'none',
       duration: 0.8,
       ease: 'power2.out'
     }, '<+=0.1')
