@@ -347,6 +347,52 @@ const bentoObserver = new IntersectionObserver((entries) => {
 const bentoGraph = document.querySelector('.bento-graph')
 if (bentoGraph) bentoObserver.observe(bentoGraph)
 
+// ── Usecases Heading Scroll Animation ──────────────────────────────────────────
+const usecasesHeading = document.querySelector('.usecases-section .headline-lg')
+const usecasesLabel = document.querySelector('.usecases-section .section-label')
+
+if (usecasesHeading) {
+  gsap.fromTo(usecasesHeading, 
+    { 
+      opacity: 0, 
+      y: 40,
+      scale: 0.95
+    },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.usecases-section',
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      }
+    }
+  )
+}
+
+if (usecasesLabel) {
+  gsap.fromTo(usecasesLabel,
+    {
+      opacity: 0,
+      y: 20
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.usecases-section',
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      }
+    }
+  )
+}
+
 // ── 3D Cylinder Scrollytelling Setup ──────────────────────────────────────────
 const pinWrapper = document.querySelector('.usecases-pin-wrapper')
 const scrollyImages = document.querySelectorAll('.scrolly-img')

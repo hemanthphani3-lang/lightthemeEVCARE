@@ -1578,6 +1578,14 @@ body.modal-open {
   overflow: hidden;
 }
 
+.usecases-section .headline-lg {
+  font-size: clamp(38px, 5.2vw, 58px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--dark-slate);
+}
+
 .usecases-pin-wrapper {
   display: flex;
   align-items: center;
