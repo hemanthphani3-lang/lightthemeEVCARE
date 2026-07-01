@@ -16,8 +16,7 @@ export function initScooter3D(canvasEl) {
     renderer = new THREE.WebGLRenderer({
       canvas: canvasEl,
       alpha: true,
-      antialias: true,
-      powerPreference: "high-performance"
+      antialias: true
     })
     renderer.setSize(canvasEl.clientWidth, canvasEl.clientHeight, false)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))

@@ -27,7 +27,6 @@ export function initDevice3D(canvasEl, options = {}) {
       canvas: canvasEl,
       antialias: true,
       alpha: true,
-      powerPreference: 'high-performance',
     })
     renderer.setSize(canvasEl.clientWidth, canvasEl.clientHeight, false)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
